@@ -1,0 +1,225 @@
+* {
+    font-family: domine, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+
+}
+
+body {
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+#score {
+    color: #fff;
+    margin: 15px 0;
+    }
+
+#main {
+    height: 100%;
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1; /* Permet à #main d'occuper l'espace restant */
+    padding: 0 8px; /* Ajoute un padding de 8px de chaque côté */
+    box-sizing: border-box; /* Inclut le padding dans la taille totale */
+}
+
+#output-section {
+    height: 35vh;
+    width: 100%;
+    letter-spacing: 3px;
+    font-size: 4vh;
+    font-weight: 680;
+    color: #fff;
+    text-align: center;
+    overflow-y: overlay;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+input[type="text"] {
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 3vh;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    max-width: 220px;
+    width: 80%;
+    text-align: center;
+    border: solid rgb(193, 193, 193);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
+input[type="text"]:focus {
+    outline: none; /* Supprime la bordure noire par défaut */
+    
+}
+
+/* Style pour le placeholder */
+input[type="text"]::placeholder {
+    font-size: 2.5vh; /* Ajustez cette valeur pour rendre le placeholder moins épais */
+    color: #d7d7d7;   /* Vous pouvez également ajuster la couleur si nécessaire */
+    opacity: 0.3;
+}
+
+#help {
+    /*margin-bottom: auto;/* /* Pousse le #output-section vers le haut */
+    margin: 14px 0;
+    font-size: 3.5vh;
+    cursor: pointer;
+
+}
+
+#keyboard {
+    margin-bottom: 8px;
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.keyboard-row {
+    margin: 2px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.key {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 2px;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: #8c8c8c;    
+    font-weight: 670;
+}
+
+.larger-key {
+    padding: 0 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    color: white;
+    font-size: 18px;
+    margin: 2px;
+    width: auto;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: #8c8c8c;    
+    font-weight: 670;
+}
+
+button:hover {
+    scale: 1.05;
+}
+
+#cut-down:hover, #continue:hover, #give-up:hover {
+    scale: 1.05;
+}
+
+#help:hover {
+    scale: 1.08;
+}
+
+.modal-container {
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.modal-container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    background-color: #4e4e4e;
+    padding: 30px 50px;
+    border-radius: 10px;
+    width: 330px;
+    text-align: center;
+    max-width: 100%;
+}
+
+.modal h1 {
+    margin-bottom: 10px;
+} 
+
+#continue {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    margin: 2px;
+    width: auto;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: #8c8c8c;    
+    font-weight: 670;
+    text-align: center;
+
+}
+
+#give-up {
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    margin: 2px;
+    width: auto;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: #FFBE98;    
+    font-weight: 670;
+}

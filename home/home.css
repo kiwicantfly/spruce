@@ -1,0 +1,75 @@
+* {
+    font-family: domine, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #fff;
+
+}
+
+
+body {
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.item {
+    margin: 18px;
+    width: 350px;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo words {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#play-button {
+    position: relative;
+    text-align: center;
+}
+
+button:hover {
+    scale: 1.05;
+}
+
+#how-to-play {
+    color: white;
+    margin-top: 50px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#how-to-play * {
+    margin: 0px;
+    padding: 5px;
+}
+
+#exemple {
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
