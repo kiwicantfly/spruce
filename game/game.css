@@ -232,10 +232,6 @@ button:hover {
     max-width: 100%;
 }
 
-.modal h1 {
-    margin-bottom: 10px;
-} 
-
 #continue {
     padding: 10px 20px;
     cursor: pointer;
@@ -245,13 +241,12 @@ button:hover {
     height: 100%;
     border: none;
     border-radius: 8px;
-    background-color: var(--grey);    
     font-weight: 670;
     text-align: center;
 
 }
 
-#give-up {
+#give-up, #you-won {
     text-align: center;
     padding: 10px 20px;
     cursor: pointer;
