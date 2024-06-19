@@ -1,0 +1,261 @@
+:root {
+    --main-max-width: 540px; 
+    --black: #1e1e1e;
+    --grey: #8c8c8c;
+    --orange:#FFBE98;
+    --min-font: 15px;
+}
+
+* {
+    font-family: domine, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclut le padding dans la taille totale */
+    color: #fff;
+}
+
+body {
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#title {
+    margin-top: 10px;
+    text-align: center; 
+    font-size: min(10vh ,50px);
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    max-width: var(--main-max-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1; /* Permet à #main d'occuper l'espace restant */
+    padding: 0 8px; 
+}
+
+
+#bottom-page, #middle{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#score {
+    margin-top: 10px;
+    font-size: min(50px, max(var(--min-font), 4.2vh));
+    text-align: center; 
+    font-weight: 680;
+    /*margin: 15px 0;*/
+}
+
+html ::-webkit-scrollbar {
+    width: 2px;
+}
+
+html ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background: rgba(119, 119, 119, 0.5);
+    border-radius: 2px;
+}
+
+#output-section {
+    margin-top: 16px;
+    width: auto;
+    max-width: var(--main-max-width);
+    height: 35vh;
+    letter-spacing: 3px;
+    font-size: min(50px, max(var(--min-font), 4vh));
+    font-weight: 680;
+    transform: scaleY(-1);
+    text-align: center;
+    overflow-y: scroll;
+}
+
+#flip {
+    transform: scaleY(-1);
+}
+
+@media (min-height: 1050px) {
+    #output-section {
+        height: 45vh;
+    }
+}
+
+
+input[type="text"] {
+    background-color: var(--black);
+    font-size: 3vh;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    max-width: 220px;
+    width: 80%;
+    text-align: center;
+    border: solid rgb(193, 193, 193);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /*margin-top: auto;  Pousse le ce qu'il y a en dessous vers le bas */
+}
+
+input[type="text"]:focus {
+    outline: none; /* Supprime la bordure noire par défaut */
+    }
+
+input[type="text"]::placeholder {
+    font-size: min(20px, max(2.8vh, 12px)); 
+    color: #d7d7d7;   
+    opacity: 0.3;
+}
+
+#help {
+    /*margin-bottom: auto;/* /* Pousse le #output-section vers le haut */
+    margin-top: 15px;
+    font-size: max(var(--min-font), min(3.5vh, 25px));
+    cursor: pointer;
+}
+
+#keyboard {
+    margin-top: 15px;
+    height: 180px;
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.keyboard-row {
+    margin: 2px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.key {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 2px;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--grey);    
+    font-weight: 670;
+}
+
+
+.larger-key {
+    padding: 0 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    max-width: 56px;  
+    font-size: 18px;
+    margin: 2px;
+    /*width: auto;*/
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--grey);    
+    font-weight: 670;
+}
+
+button:hover {
+    scale: 1.05;
+}
+
+#cut-down:hover, #continue:hover, #give-up:hover {
+    scale: 1.05;
+}
+
+#help:hover {
+    scale: 1.08;
+}
+
+.modal-container {
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.modal-container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    background-color: #4e4e4e;
+    padding: 30px 50px;
+    border-radius: 10px;
+    width: 330px;
+    text-align: center;
+    max-width: 100%;
+}
+
+#continue {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 2px;
+    width: auto;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    font-weight: 670;
+    text-align: center;
+
+}
+
+#give-up, #you-won {
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 2px;
+    width: auto;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--orange);
+    font-weight: 670;
+}
