@@ -32,7 +32,7 @@ body {
 #leaderboard {
     width: 300px;
     font-size: 17px;
-    overflow-y: overlay;
+    overflow-y: scroll;
 }
 
 html ::-webkit-scrollbar {
