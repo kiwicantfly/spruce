@@ -2,6 +2,7 @@
     --main-max-width: 500px; 
     --black: #101010;
     --grey: #606165;
+    --light-grey: #8e8e90;
     --orange:#FFBE98;
     --dark-blue:#1b1c21;
     --min-font: 15px;
@@ -241,9 +242,9 @@ button:hover {
 }
 
 #cross {
-    position: relative;
-    top: 0;
-    right: 0;
+    position: absolute;
+    top: 24px;
+    right: 24px;
 }
 
 .modal-container {
@@ -267,16 +268,16 @@ button:hover {
 }
 
 .modal {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;  
     background-color: var(--dark-blue);
-    padding: 30px 50px;
     border-radius: 10px;
-    width: 330px;
+    width: 500px;
     text-align: center;
-    max-width: 100%;
+    max-width: 85%;
 }
 
 #continue {
@@ -304,4 +305,37 @@ button:hover {
     border-radius: 8px;
     background-color: var(--orange);
     font-weight: 670;
+}
+
+#how-to-play-content {
+    text-align: left;
+}
+
+#how-to-play-content p {
+    font-weight: 590;
+    color: var(--light-grey);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+#how-to-play-content p span{
+    font-weight: 650;
+    color: #fff;
+
+}
+
+#exemple {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+#exemple p {
+    font-size: 16px;
+    color: white;
+    letter-spacing: 3px;
+    font-weight: 680px;
+    margin: 0;
 }
