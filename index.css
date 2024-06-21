@@ -10,6 +10,11 @@
     --header-button-size: 25px;
 }
 
+html, body {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+}
+
 * {
     font-family: domine, sans-serif;
     margin: 0;

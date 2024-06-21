@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+
     <!--Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,17 +139,17 @@
             </div>
         </div>
     </div>  
+    <script> 
+        const resizeOps = () => {
+            document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+        };
+
+        resizeOps();
+        window.addEventListener("resize", resizeOps);
+    </script>
     <script src="index.js"></script>     
     <!-- Stocker le score -->
-    <script> 
-        document.addEventListener('DOMContentLoaded', function() {
-        const giveUpButton = document.getElementById('give-up');
-        const scoreElement = document.getElementById('score');
-        giveUpButton.addEventListener('click', function() {
-            const score = scoreElement.textContent;
-            localStorage.setItem('score', score);
-        });
-        });
-    </script>
+
+
 </body>
 </html>
