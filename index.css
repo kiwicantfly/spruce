@@ -2,6 +2,7 @@
     --main-max-width: 500px; 
     --black: #101010;
     --grey: #606165;
+    --light-grey: #8e8e90;
     --orange:#FFBE98;
     --dark-blue:#1b1c21;
     --min-font: 15px;
@@ -93,7 +94,7 @@ header {
 
 #score {
     margin-top: 10px;
-    font-size: min(50px, max(var(--min-font), 4.2vh));
+    font-size: min(42px, max(var(--min-font), 4.2vh));
     text-align: center; 
     font-weight: 680;
     /*margin: 15px 0;*/
@@ -118,7 +119,7 @@ html ::-webkit-scrollbar-thumb {
     max-width: var(--main-max-width);
     height: 35vh;
     letter-spacing: 3px;
-    font-size: min(50px, max(var(--min-font), 4vh));
+    font-size: min(42px, max(var(--min-font), 4vh));
     font-weight: 680;
     transform: scaleY(-1);
     text-align: center;
@@ -233,17 +234,10 @@ button:hover {
     scale: 1.08;
 }
 
-#how-to-play-modal {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;    
-}
-
 #cross {
-    position: relative;
-    top: 0;
-    right: 0;
+    position: absolute;
+    top: 24px;
+    right: 24px;
 }
 
 .modal-container {
@@ -267,19 +261,20 @@ button:hover {
 }
 
 .modal {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;  
     background-color: var(--dark-blue);
-    padding: 30px 50px;
     border-radius: 10px;
-    width: 330px;
+    width: 450px;
     text-align: center;
-    max-width: 100%;
+    max-width: 85%;
 }
 
-#continue {
+#resume, .contact, .support {
+    background-color: var(--grey);    
     padding: 10px 20px;
     cursor: pointer;
     font-size: 18px;
@@ -292,7 +287,7 @@ button:hover {
     text-align: center;
 }
 
-#give-up, #you-won {
+#give-up, .restart {
     text-align: center;
     padding: 10px 20px;
     cursor: pointer;
@@ -304,4 +299,127 @@ button:hover {
     border-radius: 8px;
     background-color: var(--orange);
     font-weight: 670;
+}
+
+#end-modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 160px;
+    padding: 0px 10px;
+}
+
+#end-modal button {
+    max-height: 50px;
+}
+
+/* How to play modal */
+
+#how-to-play-modal {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+}
+
+#how-to-play-content {
+    text-align: left;
+}
+
+#how-to-play-content p {
+    font-weight: 590;
+    color: var(--light-grey);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+#how-to-play-content p span{
+    font-weight: 650;
+    color: #fff;
+
+}
+
+#exemple {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+#exemple p {
+    font-size: 16px;
+    color: white;
+    letter-spacing: 3px;
+    font-weight: 680;
+    margin: 0;
+}
+
+/* Two modals */
+
+.modal-title {
+    font-size: 20px; 
+    font-weight: 690; 
+    margin-bottom: 16px
+}
+
+.score-and-spruce {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* Give up modal */
+
+#give-up-modal, #win-modal {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#give-up-modal-content, #win-modal-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#words-not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start ;
+}
+
+#words-not-found-container p {
+    text-align: left;
+    font-weight: 590;
+    color: var(--light-grey);
+    font-size: 14px;
+    margin-bottom: 16px;
+
+}
+
+#give-up-score, #win-score {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 680;
+}
+
+#give-up-spruce, #win-spruce {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#give-up-spruce p, #win-spruce p {
+    font-size: 22px;
+    color: white;
+    letter-spacing: 3px;
+    font-weight: 680;
+    margin: 0;
 }
