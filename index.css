@@ -314,6 +314,7 @@ button:hover {
 .modal-container.show {
     opacity: 1;
     pointer-events: auto;
+    z-index: 3;
 }
 
 .modal {
@@ -329,21 +330,21 @@ button:hover {
     max-width: 85%;
 }
 
-#resume, .contact, .support, .share {
+.restart, .contact, .support, .share {
     background-color: var(--grey);    
-    padding: 10px 20px;
+    padding: 8px 16px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     margin: 2px;
     width: auto;
-    height: 100%;
+    height: 80%;
     border: none;
     border-radius: 8px;
     font-weight: 670;
     text-align: center;
 }
 
-#give-up, .restart {
+#give-up, #resume {
     text-align: center;
     padding: 10px 20px;
     cursor: pointer;
@@ -353,8 +354,15 @@ button:hover {
     height: 100%;
     border: none;
     border-radius: 8px;
-    background-color: var(--orange);
     font-weight: 670;
+}
+
+#resume {
+    background-color: var(--grey);    
+}
+
+#give-up {
+    background-color: var(--orange);   
 }
 
 #end-modal {
@@ -404,11 +412,20 @@ button:hover {
 }
 
 #exemple p {
-    font-size: 16px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px calc(8px - var(--letter-spacing)) 4px 8px;
+    background-color: var(--green);
+    border-radius: 30px;
+    font-size: 12px;
     color: white;
-    letter-spacing: 3px;
+    letter-spacing:  var(--letter-spacing);
     font-weight: 680;
-    margin: 0;
+    margin: 2px 0 0 0;
+    height: 18px;
 }
 
 /* Two modals */
@@ -470,12 +487,20 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
 }
 
 #give-up-spruce p, #win-spruce p {
-    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px calc(8px - var(--letter-spacing)) 4px 8px;
+    background-color: var(--green);
+    border-radius: 30px;
+    font-size: 16px;
     color: white;
-    letter-spacing: 3px;
+    letter-spacing:  var(--letter-spacing);
     font-weight: 680;
-    margin: 0;
+    margin: 2px 0 0 0;
 }
