@@ -48,6 +48,7 @@ header {
 
 .balance {
     height: 60px; 
+    min-height: 60px;
 }
 
 #header-container {
@@ -156,6 +157,7 @@ html ::-webkit-scrollbar-thumb {
     width: auto;
     max-width: var(--main-max-width);
     height: 35vh;
+    min-height: 50px;
     letter-spacing: var(--letter-spacing);
     font-size: min(20px, max(var(--min-font), 3vh));
     font-weight: 680;
