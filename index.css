@@ -1,10 +1,10 @@
 :root {
     --main-max-width: 500px; 
-    --black: #101010;
+    --black: #1b1c21;/*#101010;*/
     --grey: #606165;
     --light-grey: #8e8e90;
-    --orange:#FFBE98;
-    --dark-blue:#1b1c21;
+    --orange:#0A6847;
+    --dark-blue: rgb(19, 16, 27);/*#1b1c21;*/
     --min-font: 15px;
     --header-side-width: 30px;
     --header-button-size: 25px;
@@ -31,11 +31,13 @@ body {
 }
 
 header {
-    background-color: var(--dark-blue);
+    background-color: var(--black);
     width: 100%;
     height: 60px;
     display: flex;
     justify-content: center;
+    border-bottom: solid #8e8e9065;
+    border-width: 1px;
 }
 
 #header-container {
@@ -55,24 +57,31 @@ header {
 }
 
 
-#left-header {
-    height: var(--header-button-size);
-    width: var(--header-button-size);
-}
-
-#info, #cross {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#leaderboard, #statistics, #parameters, #info, #cross {
     height: var(--header-button-size);
     width: var(--header-button-size);
     background-color:  var(--grey);
-    border: none;
-    font-size: 18px;
     cursor: pointer;
     border: none;
     border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
     font-weight: 700;
+}
+
+svg {
+    fill: white;
+    width: 16px;
+}
+
+#left-btn, #right-btn {
+    width: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
 }
 
 
@@ -170,6 +179,12 @@ input[type="text"]::placeholder {
     margin-top: 15px;
     font-size: max(var(--min-font), min(3.5vh, 25px));
     cursor: pointer;
+}
+
+#cut-down {
+    background-color: var(--orange); 
+    color:white; 
+    font-size: 18px;
 }
 
 #keyboard {
@@ -270,14 +285,14 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;  
-    background-color: var(--dark-blue);
+    background-color: var(--black);
     border-radius: 10px;
     width: 450px;
     text-align: center;
     max-width: 85%;
 }
 
-#resume, .contact, .support {
+#resume, .contact, .support, .share {
     background-color: var(--grey);    
     padding: 10px 20px;
     cursor: pointer;
