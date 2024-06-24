@@ -3,8 +3,8 @@
     --black: #1b1c21;/*#101010;*/
     --grey: #606165;
     --light-grey: #8e8e90;
-    --green: #186F65;
-    --orange:#FF9800;/*#186F65;*/
+    --green: #658147;
+    --orange:#395144;/*#186F65;*/
     --dark-blue: rgb(19, 16, 27);/*#1b1c21;*/
     --min-font: 15px;
     --header-side-width: 30px;
@@ -150,7 +150,7 @@ html ::-webkit-scrollbar-thumb {
     background-color: var(--green);
     border-radius: 30px;
     margin-top: 4px;
-    height: 26px;
+    height: 22px;
 }
 
 #output-section {
@@ -159,7 +159,7 @@ html ::-webkit-scrollbar-thumb {
     max-width: var(--main-max-width);
     height: 35vh;
     letter-spacing: var(--letter-spacing);
-    font-size: min(20px, max(var(--min-font), 3vh));
+    font-size: min(24px, max(var(--min-font), 3vh));
     font-weight: 680;
     transform: scaleY(-1);
     text-align: center;
@@ -179,9 +179,16 @@ html ::-webkit-scrollbar-thumb {
     }
 }
 
-@media (max-height: 560px) {
+@media (max-height: 600px) {
     #output-section {
-        height: 25vh;
+        height: 30vh;
+    }
+    #help, #keyboard {
+        margin-top: 8px !important;
+    }
+    header, .balance {
+        height: 40px;
+        min-height: 40px;
     }
 }
 
