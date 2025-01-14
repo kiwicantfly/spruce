@@ -11,7 +11,7 @@
     <!--Stylesheet-->
     <link rel="stylesheet" href="index.css">
 
-    <title>Spruce - An original word game</title>
+    <title>Spruce - Un jeu original</title>
     <link rel="icon" href="/home/jafar/Documents/webdev/spruce/logo5.png" type="image/x-icon"/>
 </head>
 <body>
@@ -38,7 +38,7 @@
         </div>
         <div id="bottom-page">
             <input type="text" id="input-box">
-            <div id="help" style="height: 20px; width:auto; border: none; text-align: center; color: #fff; letter-spacing: 3px; font-weight: 680;">help</div>
+            <div id="help" style="height: 20px; width:auto; border: none; text-align: center; color: #fff; letter-spacing: 3px; font-weight: 680;">aide</div>
             <div id="keyboard">
                 <div class="keyboard-row" >
                     <button type="button" data-key="a" aria-label="add a" aria-disabled="false" class="key">a</button>
@@ -65,7 +65,7 @@
                     <button type="button" data-key="m" aria-label="add m" aria-disabled="false" class="key">m</button>
                 </div>
                 <div class="keyboard-row">
-                    <button id="cut-down" type="button" data-key="cutdown" class="larger-key">cut down</button>
+                    <button id="cut-down" type="button" data-key="cutdown" class="larger-key">stop</button>
                     <button type="button" data-key="w" aria-label="add w" aria-disabled="false" class="key">w</button>
                     <button type="button" data-key="x" aria-label="add x" aria-disabled="false" class="key">x</button>
                     <button type="button" data-key="c" aria-label="add c" aria-disabled="false" class="key">c</button>
@@ -80,13 +80,31 @@
     </div>  
     <div class="modal-container" id="end-modal-container">
         <div class="modal" id="end-modal">    
-            <button id="resume">resume</button>            
-            <button data-key="giveup" id="give-up">give up</button>
+            <button id="resume">reprendre</button>            
+            <button data-key="giveup" id="give-up">abandon</button>
         </div>
     </div>
     <div class="modal-container" id="how-to-play-modal-container">
         <div class="modal" id="how-to-play-modal">
             <button id="cross"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button> 
+            <h2 class="modal-title">Comment jouer ?</h2>
+            <div id="how-to-play-content">
+                <p>Vous devez garder toutes les lettres du mot précédent puis les réarranger et ajouter une lettre pour former le mot suivant.</p>      
+                <p>Votre <span>spruce</span> va pousser jusqu'à que vous l'abattiez ou que l'ordinateur ne parvienne pas à trouver de nouveau mot.</p>
+                <p style="margin-bottom: 0;">Exemple :</p>
+                <div id="exemple">
+                    <p>a</p>
+                    <p>la</p>
+                    <p>las</p>
+                    <p>sale</p>
+                    <p>pales</p>
+                </div>
+                <p>Les accents ne sont pas pris en compte.</p>
+                <p>Vous pouvez utiliser des mots au pluriel et des verbes conjugés.</p>
+                <p>Votre <span>score</span>  as you find longer words, change the order of the letters and use infrequent letters.</p>
+                <p>Need <span>help</span> ? Click on the word above the keyboard to shuffle the letters.</p>
+            </div>            
+            <!--
             <h2 class="modal-title">How to play ?</h2>
             <div id="how-to-play-content">
                 <p>You must keep all the letters from the previous word, then rearrange them and add a new letter to form the next word.</p>      
@@ -103,20 +121,22 @@
                 <p>Your <span>score</span> will get better as you find longer words, change the order of the letters and use infrequent letters.</p>
                 <p>Need <span>help</span> ? Click on the word above the keyboard to shuffle the letters.</p>
             </div>
+            -->
         </div>
     </div>
     <div class="modal-container" id="give-up-modal-container">
         <div class="modal" id="give-up-modal"> 
-            <h2 class="modal-title">Well played !</h2>   
+            <h2 class="modal-title">Bien joué !</h2>   
             <div id="give-up-modal-content">
                 <div class="score-and-spruce">            
                     <div id="give-up-score">0</div>
                     <div id="give-up-spruce"></div> <!-- spruce -->
                 </div>
                 <div id="words-not-found-container">
-                    <p>You could have found :</p>
+                    <p>Vous auriez pu trouver :</p>
                     <p id="words-not-found"></p>
                 </div>
+                <!--
                 <div class="three-btn">
                     <div class="top-btn">
                         <button class="contact">contact</button>
@@ -126,17 +146,19 @@
                     <button class="share">share</button>
 
                 </div>
+                -->
             </div>
         </div>
     </div>
     <div class="modal-container" id="win-modal-container">
         <div class="modal" id="win-modal">                
-            <h2 class="modal-title">You beat the computer !</h2>
+            <h2 class="modal-title">Vous avez battu la machine !</h2>
             <div id="win-modal-content">
                 <div class="score-and-spruce">            
                     <div id="win-score">0</div>
                     <div id="win-spruce"></div> <!-- spruce -->
                 </div>
+                <!--
                 <div class="three-btn">
                     <div class="top-btn">
                         <button class="contact">contact</button>
@@ -146,6 +168,7 @@
                     <button class="share">share</button>
 
                 </div>
+                -->
             </div>
         </div>
     </div>
